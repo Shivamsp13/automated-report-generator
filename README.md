@@ -16,7 +16,7 @@ Python calculates the facts. The language model verbalizes those facts. Validati
 ## Prerequisites
 
 - Python 3.9 or later
-- `pip`
+- pip
 - Optional: Docker and Docker Compose for containerized runs
 - Optional: Hugging Face access if you disable mock mode and load `Qwen/Qwen2.5-0.5B-Instruct`
 
@@ -44,7 +44,7 @@ The pipeline writes:
 - `output/generation_audit.json`
 - `output/pader_report.md`
 
-### Docker
+Docker:
 
 ```bash
 python scripts/generate_sample_icsr.py
@@ -75,21 +75,27 @@ Place the Excel file under `data/` and set `ICSR_INPUT_FILE` to that path. Colum
 
 Leave `MOCK_LLM=true`. GitHub Actions and the default Docker image use that mode.
 
+### Can the model calculate case counts?
+
+No. `src/analysis.py` owns counts, percentages, and trends. The model only receives compact evidence JSON.
+
 ## Documentation
 
-- Architecture
-- Prompt contract
-- Security policy
+- [Architecture](architecture_diagram.md)
+- [Prompt contract](prompts/report_prompts.md)
+- [Security policy](SECURITY.md)
+- [Contributing](CONTRIBUTING.md)
+- [Changelog](CHANGELOG.md)
 
 ## Contributing
 
-See `CONTRIBUTING.md` for development setup, testing, and pull request expectations.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for development setup, testing, and pull request expectations.
 
 ## Changelog
 
-See `CHANGELOG.md` for version history.
+See [CHANGELOG.md](CHANGELOG.md) for version history.
 
 ## Support
 
-- **Issues:** Use the GitHub issue templates in this repository.
-- **Security:** Follow `SECURITY.md`. Do not attach identifiable patient data to issues.
+- **Issues**: Use the GitHub issue templates in this repository.
+- **Security**: Follow [SECURITY.md](SECURITY.md). Do not attach identifiable patient data to issues.

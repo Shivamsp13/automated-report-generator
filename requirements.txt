@@ -1,0 +1,8 @@
+-r requirements-ci.txt
+
+# Optional local Hugging Face generation. Not required when MOCK_LLM=true.
+transformers>=4.50,<5.0
+torch>=2.6,<3.0
+sentencepiece>=0.2,<1.0
+accelerate>=1.0,<2.0
+tqdm>=4.66,<5.0
